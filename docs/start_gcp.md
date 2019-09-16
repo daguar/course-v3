@@ -115,7 +115,7 @@ If you choose the budget compute option, please replace the values of the parame
 
 ```bash
 export IMAGE_FAMILY="pytorch-latest-gpu" # or "pytorch-latest-cpu" for non-GPU instances
-export ZONE="us-west2-b" # budget: "us-west1-b"
+export ZONE="us-west1-b"
 export INSTANCE_NAME="my-fastai-instance"
 export INSTANCE_TYPE="n1-highmem-8" # budget: "n1-highmem-4"
 
@@ -139,7 +139,7 @@ ERROR: (gcloud.compute.instances.create) Could not fetch resource:
 You need to adjust your GPU quotas.
 1. Go to [Google Cloud Quotas Page](https://console.cloud.google.com/iam-admin/quotas).
 2. If you signed up with a free tier account, you first need to upgrade to a paid account; do so by clicking the "Upgrade account" button at the top right of the page. This won't affect your $300 credit.
-3. In filter type, select metric to be GPUs (all regions) and Location as Global.
+3. In the "Metrics" dropdown, select "GPUs (all regions)" and under "Locations" select "Global" (or "All locations").
 4. Click edit quotas and select the quota to edit (GPUs All Regions). Set the new quota limit to 1 or more.
 Your request may require confirmation, which Google claims typically takes two business days to get.
 
